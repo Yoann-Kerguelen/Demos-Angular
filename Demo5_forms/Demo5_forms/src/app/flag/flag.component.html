@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>{{ title }}</h2>
+    <div class="row">
+        <app-color class="col-sm-4" [colorFlag]="color1" (click)="changeColor(color1, 1)"></app-color>
+        <app-color class="col-sm-4" [colorFlag]="color2" (click)="changeColor(color2, 2)"></app-color>
+        <app-color class="col-sm-4" [colorFlag]="color3" (click)="changeColor(color3, 3)"></app-color>
+        <i>{{ country }}</i>
+    </div>
+    <div>
+        <label for="c1">Couleur 1 : </label>
+        <input type="color" id="c1" [(ngModel)]="color1">
+        <br>
+        <label for="c2">Couleur 2 : </label>
+        <input type="color" id="c2" [(ngModel)]="color2">
+        <br>
+        <label for="c3">Couleur 3 : </label>
+        <input type="color" id="c3" [(ngModel)]="color3">
+    </div>    
+</div>

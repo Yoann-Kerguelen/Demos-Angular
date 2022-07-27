@@ -1,0 +1,12 @@
+<h2>Calcul de l'IMC</h2>
+
+<div>
+    <label for="size">Taille en m : </label>
+    <input type="number" id="size" [(ngModel)]="size">
+    <br>
+    <label for="weight">Poids en kg : </label>
+    <input type="number" id="weight" [(ngModel)]="weight">
+    <br>
+    <button class="btn-primary" (click)="calcIMC()">Calculer l'IMC</button>
+    <p>Votre IMC est de : {{ imc | number: '1.2' }}</p>
+</div>

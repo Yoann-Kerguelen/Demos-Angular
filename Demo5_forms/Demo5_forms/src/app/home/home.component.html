@@ -1,0 +1,39 @@
+<div class="container">
+  <div>
+    <h1>Template driven form</h1>
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div>
+        <label for="username">Nom de l'utilisateur : </label>
+        <input type="text" id="username" name="username" [(ngModel)]="user" #username="ngModel" required minlength="3">
+        <div [hidden]="username.pristine || username.valid" class="alert alert-danger">
+          Le nom d'utilisateur est obligatoire et doit faire au moins 3 caractères de long.
+        </div>
+      </div>
+      <div>
+        <label for="password">Mot de passe : </label>
+        <input type="password" id="password" name="password" [(ngModel)]="pwd" #password="ngModel" required>
+        <div [hidden]="password.pristine || password.valid" class="alert alert-danger">
+          Le mot de passe est obligatoire !
+        </div>
+      </div>
+      <div>
+        <div [hidden]="userForm.pristine || userForm.valid" class="alert alert-danger">
+          Le formulaire est mal remplis !
+        </div>
+        <input type="submit" class="btn btn-primary" [disabled]="userForm.form.invalid" value="Valider">
+      </div>
+    </form>
+  </div>
+
+  <div>
+    <h1>Reactive form</h1>
+    <form [formGroup]="profileForm" (ngSubmit)="onReactiveSubmit()">
+      Prénom : <input type="text" formControlName="firstname">
+      Nom : <input type="text" formControlName="lastname">
+      <div>
+        {{ profileForm.status }}
+        <input type="submit" class="btn btn-primary" value="Valider">
+      </div>
+    </form>
+  </div>
+</div>
