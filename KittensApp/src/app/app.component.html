@@ -1,0 +1,13 @@
+<h1 class="text-center">{{ title }}</h1>
+<div class="container justify-content-center">
+  <div>
+    <button class="btn btn-primary" (click)="getPreviousCat()" [disabled]="i <= 0">Chat précédent</button>
+  </div>
+  <div>
+    <img class="mx-auto d-block" [src]="urls[i]" alt="photo de chat" />
+  </div>
+  <div>
+    <button class="btn btn-primary" (click)="getNextCat()">Chat suivant</button>
+  </div>
+</div>
+<router-outlet></router-outlet>

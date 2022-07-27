@@ -1,0 +1,31 @@
+<div class="container body">
+    <div class="calcul">
+        <h1 class="text-center">Faites votre calcul</h1>
+        <div class="text-center">
+            <form [formGroup]="calculForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                    <div class="mb-3 row">
+                        a <input class="form-control" type="number" formControlName="a">
+                        b <input class="form-control" type="number" formControlName="b">
+                        calcul <select class="form-control" formControlName="calcul">
+                            <option>+</option>
+                            <option>-</option>
+                            <option>*</option>
+                            <option>/</option>
+                            <option>%</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div [hidden]="!calculForm.invalid" class="alert alert-danger">
+                        Le formulaire est mal remplis !
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="calculer" [disabled]="calculForm.invalid">
+                </div>
+                <div>
+                    <h1>Le résultat est {{res}}</h1>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
