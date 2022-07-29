@@ -1,5 +1,8 @@
 # KittensApp
 
+![alt text](https://repository-images.githubusercontent.com/518396017/3f27198e-9300-49b7-a5aa-d8f6457dfb85)
+ Oui je sais ce sont des chiens :) l'api pour les chats ne marchait plus ^^
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
 ## Development server
